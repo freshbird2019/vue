@@ -1,0 +1,18 @@
+#register{
+	padding: 10px;
+	height: -webkit-fill-available;
+	background: url('../img/index.jpg');
+}
+.el-form{
+  border-style: solid;
+  border-color: #2196F3; 
+  border-radius:25px;
+  padding: 50px;
+  margin-top: 0px;
+  background-color: white;
+  width: 30%;
+  margin-left: 28%;
+}
+.el-form-item>.el-button{
+
+}

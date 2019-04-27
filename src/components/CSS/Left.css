@@ -1,0 +1,30 @@
+#Left{
+	
+	width: -webkit-fill-available;
+	height: 50px;
+	margin-top: 30px;
+	margin-left: 5px;
+	margin-right: 5px;
+	border-style: solid;
+	border-color: #82d7fe99;
+	background-color: #82d7fe99;
+	border-width: 2px;
+	border-radius:20px;
+}
+#Left>ul{
+	width: -webkit-fill-available;
+	height: -webkit-fill-available;
+	float: left;
+	list-style:none;
+	margin-top: 6px;
+}
+#Left>ul>li{
+	margin-right: 80px;
+	float: left;
+	font-size: 1.2em;
+}
+#Left>ul>li>div{
+	margin-top: 2px;
+	background-color: #00cee8;
+	height: 3px;
+}

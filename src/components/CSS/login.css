@@ -1,0 +1,50 @@
+#login{
+	//background-color: green;
+	background: url('../img/index.jpg');
+}
+#Login_Table{
+	margin-top: 2%;
+	margin-left: 35%;
+	width: 500px;
+	height: 450px;
+
+}
+.title{
+	font-size: 1.5em;
+}
+#Login_Name{
+	font-size: 1.2em;
+	border-style: solid;
+	border-color: #2196F3;
+	background-color: #2196F3;
+	border-radius:20px 20px 0 0;
+	border-width: 1px;
+	padding-left: 20px;
+	padding-top: 10px;
+}
+#Login_Ul{
+	border-style: solid;
+	border-color: #2196F3;
+	background-color: white;
+	border-width: 1px;
+	border-radius:0 0 20px 20px;
+	height: 250px;
+}
+#Login_Ul>.el-form{
+	margin-top: 30px;
+}
+.el-form-item{
+	//background-color: black;
+}
+.el-input{
+	width: 300px;
+}
+#Login_Ul>div{
+	text-decoration: none;
+    box-shadow: 0 1px;
+	margin-left: 65%;
+}
+.el-button{
+	margin-left: 100px;
+}
+
