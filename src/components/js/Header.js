@@ -14,6 +14,21 @@ export default {
       this.where=num;
       this.$router.push({path:this.dre_route[num]})
     },
+    changeMaska:function(b){
+      if(b){
+        document.getElementById("a").style.cursor="pointer";
+      }else{
+        document.getElementById("a").style.cursor="wait";
+      }
+    },
+    changeMaskb:function(b){
+      if(b){
+        document.getElementById("b").style.cursor="pointer";
+      }else{
+        document.getElementById("b").style.cursor="wait";
+      }
+    },
+
   },
   watch :{
     where: function (value){

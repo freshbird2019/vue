@@ -1,3 +1,5 @@
+import {getCookie, setCookie} from "./cookie";
+
 export default {
     data() {
       var checkAge = (rule, value, callback) => {
@@ -52,7 +54,11 @@ export default {
           age: [
             { validator: checkAge, trigger: 'blur' }
           ]
-        }
+        },
+        tishi:'',
+        showTishi: false,
+        username: '',
+        password: '',
       };
     },
     methods: {
@@ -74,5 +80,43 @@ export default {
 
       },
       //* end of 忘记密码
-    }
+
+      // 登陆
+      login(formName) {
+        console.log(formName.name);
+        if(formName.name === "" ){
+          alert("请输入用户名")
+        }else{
+         // var name=encodeURI(formName.name);
+          let data = {'name':formName.name,'pw':formName.pass};
+          /*接口请求*/
+          //之前后端接受到的值是null，因为用get
+          this.$http.post('http://127.0.0.1:8088/project/UserLogin',data).then((res)=>{
+            console.log(res)
+            if(res.data === 1){
+              this.tishi = "该用户不存在"
+              this.showTishi = true
+            }else if(res.data === 2){
+              this.tishi = "密码输入错误"
+              this.showTishi = true
+            }
+            else{
+              this.tishi = "登录成功"
+              this.showTishi = true
+              setCookie('username',formName.name,1000*60)
+              setTimeout(function(){
+                this.$router.push('/stu/s-timeline')
+              }.bind(this),1000)
+            }
+          })
+        }
+      },
+
+    },
+  mounted(){
+    /*页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录*/
+    /* if(getCookie('username')){
+       this.$router.push('/home')
+     }*/
+  },
   }

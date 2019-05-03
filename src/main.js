@@ -12,7 +12,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false;
 
-Vue.prototype.$axios = axios
+Vue.prototype.$ajax = axios
 axios.defaults.baseURL = "http://localhost:8080/ChatRobot_war_exploded"
 Vue.use(VueResource);
 Vue.use(ElementUI);

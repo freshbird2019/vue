@@ -37,10 +37,15 @@
       };
       return {
         ruleForm: {
+          name:'',
           pass: '',
           checkPass: '',
+          phone:'',
+          email: '',
           age: '',
-          email: ''
+          sex:'',
+          address:'',
+          hos:''
         },
         rules: {
           pass: [
@@ -52,7 +57,9 @@
           age: [
             { validator: checkAge, trigger: 'blur' }
           ]
-        }
+        },
+        tishi:"",
+        showTishi:false
       };
     },
     methods: {
@@ -68,6 +75,34 @@
       },
       resetForm(formName) {
         this.$refs[formName].resetFields();
+      },
+      Register(){
+
+
+          let data = this.ruleForm;
+          console.log(data);
+        this.$ajax({
+          method: 'post',
+          url: 'http://127.0.0.1:8088/project//UserRegister',
+          data: data,
+          dataType:'json',
+          contentType: "application/json;charset=utf-8",
+        }).then((res) => {
+            console.log(res)
+            if (res.data === true) {
+
+              console.log(res.data)
+              this.tishi = "注册成功"
+              this.showTishi = true;
+
+              /*注册成功之后再跳回登录页*/
+              setTimeout(function () {
+                this.$router.push('/login')
+              }.bind(this), 1000)
+            }
+          })
+
       }
+
     }
   }
